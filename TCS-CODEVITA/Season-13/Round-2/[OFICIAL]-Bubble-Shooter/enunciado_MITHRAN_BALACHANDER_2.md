@@ -1,0 +1,12 @@
+10 12
+6
+O P O G G G G G B B R R
+O P O R R O O R Y B B P
+O B P P P P P P Y B B Y
+O B P B B G G P Y Y O .
+. . P B G G R Y Y Y O .
+. . . G G G G G G Y . .
+O P G B R Y
+5 6 8 10 7 4
+3
+1
