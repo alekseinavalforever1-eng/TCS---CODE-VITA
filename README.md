@@ -90,6 +90,33 @@ Cada uno de los ejercicios del repositorio está equipado con:
 
 ---
 
+## ⚖️ Simulador y Juez de Pruebas Local (`codevita_judge.py`)
+
+El repositorio incluye un **juez local offline** en Python puro que emula con precisión el evaluador oficial de TCS CodeVita, permitiéndote probar soluciones en **Python**, **C++** y **Java**:
+
+- 🧪 **Detección automática de casos de prueba**: Lee los ejemplos de entrada/salida directamente desde el `enunciado.md`.
+- ⚡ **Compilación y ejecución real**: Soporta `clang++`/`g++` con compatibilidad para `<bits/stdc++.h>`, `javac`/`java`, y `python`.
+- ⏱️ **Medición de tiempo y TLE**: Reporta el tiempo de ejecución en milisegundos y alerta si excede el límite de tiempo oficial (> 2.0s).
+- 🔍 **Comparador exacto de salidas**: Detecta `[ACCEPTED]` o muestra la discrepancia detallada (`[WRONG ANSWER]`).
+
+### Comandos de Ejemplo:
+
+```bash
+# 1. Evaluar un problema contra sus casos de prueba de ejemplo
+python codevita_judge.py "Season-9/Round-1/[OFICIAL]-Railwaystation"
+
+# 2. Evaluar ingresando una entrada manual por consola
+python codevita_judge.py "Season-8/Round-1/[OFICIAL]-Exchange-Digits" -i "459 500"
+
+# 3. Probar en modo interactivo paso a paso
+python codevita_judge.py "No-Season/Practice-Problems/[OFICIAL]-Collecting-Candies" --interactive
+
+# 4. Forzar evaluación con un lenguaje específico (ej: java o cpp)
+python codevita_judge.py "Collecting-Candies" -l java -i "4 1 2 3 4"
+```
+
+---
+
 ## 🚀 Cómo Empezar
 
 1. Clona el repositorio:
@@ -99,3 +126,4 @@ Cada uno de los ejercicios del repositorio está equipado con:
    ```
 2. Lee la **[Ruta Oficial de Preparación](TCS-CODEVITA/RUTA_OFICIAL_PREPARACION.md)** para configurar tus plantillas de Fast I/O en C++, Python o Java.
 3. Abre el **[Checklist Maestro de Ejercicios](TCS-CODEVITA/CHECKLIST_ORDEN_EJERCICIOS.md)** y comienza a resolver los ejercicios desde **MockVita** hacia adelante.
+4. Usa el simulador `python codevita_judge.py [problema]` para validar tus soluciones localmente antes de competir.
