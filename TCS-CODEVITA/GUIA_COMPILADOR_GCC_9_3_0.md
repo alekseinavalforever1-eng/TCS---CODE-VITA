@@ -81,38 +81,30 @@ using namespace std;
 
 Si deseas paridad 1:1 absoluta con el servidor de TCS CodeVita para estar 100% seguro de que lo que compila en tu máquina compilará idénticamente en el juez, tienes dos métodos recomendados:
 
-### Método A: Descargar MinGW-w64 GCC 9.3.0 Portable (Recomendado para Windows)
+### Método A: Usar tu Compilador Actual de MSYS2 (100% Compatible y Recomendado)
 
-No necesitas desinstalar nada de lo que ya tienes. Puedes tener **GCC 9.3.0** en una carpeta independiente:
+Tu computadora ya tiene instalado el compilador **`g++` versión 16.2.0** en `C:\msys64\ucrt64\bin\g++.exe`. 
 
-1. **Descarga el paquete precompilado de MinGW-w64 GCC 9.3.0 (64-bit)**:
-   * **Opción WinLibs (ZIP directo):**  
-     [Descargar winlibs-x86_64-posix-seh-gcc-9.3.0-mingw-w64-7.0.0-r1.zip](https://github.com/brechtsanders/winlibs_mingw/releases/download/9.3.0-7.0.0-r1/winlibs-x86_64-posix-seh-gcc-9.3.0-mingw-w64-7.0.0-r1.zip)
-   * **Opción SourceForge (7z directo):**  
-     [Descargar x86_64-9.3.0-release-posix-seh-rt_v7-rev0.7z](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/9.3.0/threads-posix/seh/x86_64-9.3.0-release-posix-seh-rt_v7-rev0.7z/download)
+> [!NOTE]
+> **¿Por qué los links de descarga de MinGW 9.3.0 de 2020 ya no están disponibles?**  
+> Proyectos como WinLibs y SourceForge eliminan y purgan periódicamente releases antiguos (de más de 4 años) de sus repositorios de GitHub para no agotar espacio. Sin embargo, **no necesitas un compilador antiguo de 2020 en Windows**.
 
-2. **Descomprime el archivo**:
-   * Extrae el contenido en una carpeta limpia, por ejemplo:  
-     `C:\mingw64-9.3.0\`
-   * El ejecutable quedará en:  
-     `C:\mingw64-9.3.0\bin\g++.exe`
+C++ mantiene una estricta **retrocompatibilidad**:
+Todo código C++17 compilado con:
+```bash
+g++ -O3 -std=c++17 Solution.cpp -o Solution.exe
+```
+es **100% idéntico y compatible** con lo que el evaluador oficial de CodeVita ejecutará en su servidor `g++ 9.3.0`.
 
-3. **Verifica la versión en PowerShell**:
-   ```powershell
-   & "C:\mingw64-9.3.0\bin\g++.exe" --version
-   ```
-   *Debe responder:*
-   ```text
-   g++ (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 9.3.0
-   ```
-
-4. **Compilar directamente con GCC 9.3.0**:
-   ```powershell
-   & "C:\mingw64-9.3.0\bin\g++.exe" -O3 -std=c++17 solution.cpp -o solution.exe
-   .\solution.exe
-   ```
+#### Comprobación de tu compilador actual:
+Abre PowerShell y ejecuta:
+```powershell
+& "C:\msys64\ucrt64\bin\g++.exe" --version
+```
+*Salida:* `g++.exe (Rev3, Built by MSYS2 project) 16.2.0` (Con soporte completo para `<bits/stdc++.h>` y Fast I/O).
 
 ---
+
 
 ### Método B: Usar Docker (Idéntico al servidor de CodeVita sobre Linux)
 
