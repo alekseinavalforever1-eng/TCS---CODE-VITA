@@ -8,6 +8,9 @@ El repositorio más completo, estructurado y documentado para la preparación in
 
 Para comenzar a estudiar y resolver problemas, utiliza las guías centrales ubicadas en el repositorio:
 
+- ⚔️ **[Plan de Choque Espartano: 64 Días](PLAN_MAESTRO_64_DIAS_CODEVITA.md)**  
+  *Cronograma intensivo día por día (Día 1 al 64) integrando el dominio de **C++17**, los **150 problemas de NeetCode**, **3 libros de CP** y todo el catálogo de **TCS-CODEVITA**.*
+
 - 🚀 **[Ruta Oficial de Preparación](TCS-CODEVITA/RUTA_OFICIAL_PREPARACION.md)**  
   *Guía paso a paso por niveles (Nivel 1 a 6), plantillas indispensables de Fast I/O, sintaxis clave y trucos de optimización para **C++**, **Python** y **Java**.*
 
