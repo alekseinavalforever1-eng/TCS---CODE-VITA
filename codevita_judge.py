@@ -184,10 +184,19 @@ def run_solution(code_file, input_text, timeout=2.0):
 
     # C++
     elif ext in ['.cpp', '.c']:
-        # Look for clang++ or g++
-        compiler = shutil.which("clang++") or shutil.which("g++")
+        # Look for g++ first (TCS CodeVita standard), custom paths, then clang++
+        cxx_candidates = [
+            os.environ.get("CODEVITA_CXX"),
+            shutil.which("g++"),
+            r"C:\msys64\ucrt64\bin\g++.exe",
+            r"C:\msys64\mingw64\bin\g++.exe",
+            r"C:\mingw64-9.3.0\bin\g++.exe",
+            r"C:\mingw64\bin\g++.exe",
+            shutil.which("clang++"),
+        ]
+        compiler = next((c for c in cxx_candidates if c and (shutil.which(c) or Path(c).is_file())), None)
         if not compiler:
-            return {"verdict": "CE", "stdout": "", "stderr": "No C++ compiler found (clang++ or g++ needed in PATH)", "time_ms": 0, "returncode": -1}
+            return {"verdict": "CE", "stdout": "", "stderr": "No C++ compiler found (g++ or clang++ needed in PATH)", "time_ms": 0, "returncode": -1}
             
         with tempfile.TemporaryDirectory() as temp_dir:
             # Provide bits/stdc++.h compatibility for clang++ on Windows

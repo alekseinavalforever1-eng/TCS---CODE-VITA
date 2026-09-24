@@ -11,6 +11,9 @@ Para comenzar a estudiar y resolver problemas, utiliza las guías centrales ubic
 - 🚀 **[Ruta Oficial de Preparación](TCS-CODEVITA/RUTA_OFICIAL_PREPARACION.md)**  
   *Guía paso a paso por niveles (Nivel 1 a 6), plantillas indispensables de Fast I/O, sintaxis clave y trucos de optimización para **C++**, **Python** y **Java**.*
 
+- ⚙️ **[Guía de Compilador: g++ 9.3.0 vs Entorno Local](TCS-CODEVITA/GUIA_COMPILADOR_GCC_9_3_0.md)**  
+  *Análisis técnico de la versión oficial del juez de CodeVita (g++ 9.3.0 en Linux), qué tienes en Windows (GCC 16), por qué no descargar fuentes de ftp.gnu.org y cómo configurar g++ 9.3.0 portable.*
+
 - ✅ **[Checklist Maestro de Ejercicios](TCS-CODEVITA/CHECKLIST_ORDEN_EJERCICIOS.md)**  
   *Checklist interactivo con casillas `[ ]` $\rightarrow$ `[x]` que organiza los ejercicios en orden secuencial óptimo desde **MockVita** hasta la **Grand Finale**.*
 
